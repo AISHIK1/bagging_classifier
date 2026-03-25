@@ -85,7 +85,7 @@ if st.sidebar.button('Run Algorithm'):
     random_state=42
 )
 
-bag_clf.fit(X_train, y_train)
+    bag_clf.fit(X_train, y_train)
     y_pred = bag_clf.predict(X_test)
 
     orig.empty()
