@@ -23,7 +23,8 @@ def draw_meshgrid():
     return XX, YY, input_array
 
 
-plt.style.use('seaborn-bright')
+import seaborn as sns
+sns.set_style("whitegrid")
 
 st.sidebar.markdown("# Bagging Classifier")
 
