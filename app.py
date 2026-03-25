@@ -78,10 +78,12 @@ if st.sidebar.button('Run Algorithm'):
     y_pred_tree = clf.predict(X_test)
 
     bag_clf = BaggingClassifier(
-    estimator=DecisionTreeClassifier(),
-    n_estimators=100,
-    max_samples=0.8,
-    max_features=1.0,
+    estimator=estimator,   # ✅ use selected model
+    n_estimators=n_estimators,
+    max_samples=max_samples / X_train.shape[0],  # convert to fraction
+    max_features=max_features,
+    bootstrap=(bootstrap_samples == 'True'),
+    bootstrap_features=(bootstrap_features == 'True'),
     random_state=42
 )
 
