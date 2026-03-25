@@ -98,7 +98,7 @@ if st.sidebar.button('Run Algorithm'):
     labels1 = bag_clf.predict(input_array)
 
 
-    col1, col2 = st.beta_columns(2)
+    col1, col2 = st.columns(2)
     with col1:
         st.header(estimators)
         ax.scatter(X.T[0], X.T[1], c=y, cmap='rainbow')
