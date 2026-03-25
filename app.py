@@ -77,10 +77,15 @@ if st.sidebar.button('Run Algorithm'):
     clf.fit(X_train, y_train)
     y_pred_tree = clf.predict(X_test)
 
-    bag_clf = BaggingClassifier(estimator
-        , n_estimators=n_estimators,
-        max_samples=max_samples, bootstrap=bootstrap_samples,max_features=max_features,bootstrap_features=bootstrap_features, random_state=42)
-    bag_clf.fit(X_train, y_train)
+    bag_clf = BaggingClassifier(
+    estimator=DecisionTreeClassifier(),
+    n_estimators=100,
+    max_samples=0.8,
+    max_features=1.0,
+    random_state=42
+)
+
+bag_clf.fit(X_train, y_train)
     y_pred = bag_clf.predict(X_test)
 
     orig.empty()
